@@ -1,0 +1,23 @@
+<h2>Products</h2>
+
+<div *ngFor="let product of products">
+  <h3>
+    <a [title]="product.name + ' details'" [routerLink]="['/products', product.id]">
+      {{product.name}}
+    </a>
+  </h3>
+  <img src={{product.imgUrl}}  width="100" height="100"/>
+  <p *ngIf="product.description">
+    Description: {{product.description}}
+  </p>
+  <button (click)="share(product.name)">Share</button>
+  <app-product-alert [product]="product" (notify)="onNotify(product.name)"></app-product-alert>
+  <!-- <p *ngIf="product.price > 700">
+    <button>Notify me!</button>
+  </p> -->
+</div>
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
