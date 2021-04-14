@@ -1,11 +1,10 @@
-<a [routerLink]="['/']">
-  <h1>My Store</h1>
-</a>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span><a routerLink="/">Shop here!!</a></span>
+    <span class="flexer"></span>
+    <button mat-icon-button routerLink="/cart" class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
 
-<a routerLink="/cart" class="button fancy-button"><i class="material-icons">shopping_cart</i>Checkout</a>
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->

@@ -12,18 +12,28 @@ import { CartService } from "./cart.service";
 import { CartComponent } from "./cart/cart.component";
 import { HttpClientModule } from "@angular/common/http";
 import { ShippingComponent } from "./shipping/shipping.component";
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatGridListModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule,
     RouterModule.forRoot([
       { path: "", component: ProductListComponent },
       { path: "products/:productId", component: ProductDetailsComponent },
       { path: "cart", component: CartComponent },
       { path: "shipping", component: ShippingComponent }
-    ])
+    ]),
+    NoopAnimationsModule
   ],
   declarations: [
     AppComponent,
@@ -37,10 +47,4 @@ import { ShippingComponent } from "./shipping/shipping.component";
   bootstrap: [AppComponent],
   providers: [CartService]
 })
-export class AppModule {}
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/
+export class AppModule { }
